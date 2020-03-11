@@ -3,8 +3,8 @@ commonfields:
   id: AWS Feed
   version: -1
 configuration:
-- display: Sub-Feeds
-  name: sub_feeds
+- display: Services
+  name: services
   options:
   - AMAZON
   - EC2
@@ -77,7 +77,6 @@ configuration:
   required: true
   type: 15
 - defaultvalue: indicatorType
-  hidden: true
   name: feedExpirationPolicy
   display: ""
   required: false
@@ -87,8 +86,7 @@ configuration:
   - indicatorType
   - suddenDeath
   type: 17
-- hidden: true
-  name: feedExpirationInterval
+- name: feedExpirationInterval
   required: false
   display: ""
   type: 1
@@ -130,7 +128,7 @@ script:
     description: Fetches indicators from the feed.
     execution: false
     name: aws-get-indicators
-  dockerimage: demisto/jmespath:1.0.0.5129
+  dockerimage: demisto/jmespath:1.0.0.6232
   feed: true
   isfetch: false
   longRunning: false
